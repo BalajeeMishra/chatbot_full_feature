@@ -1,0 +1,17 @@
+.dark,
+.light {
+  width: 100%;
+  height: 100%;
+}
+
+/* Additional styles specific to dark theme */
+.dark {
+  background-color: #333; /* Example dark background color */
+  color: #fff; /* Example light text color */
+}
+
+/* Additional styles specific to light theme */
+.light {
+  background-color: #fff; /* Example light background color */
+  color: #333; /* Example dark text color */
+}

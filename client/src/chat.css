@@ -1,0 +1,37 @@
+
+.chatBox {
+  width: 500px;
+  height: 500px;
+  background-color: azure;
+  border: 5px solid black;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbox_sender {
+  background-color: #dcf8c6;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  max-width: 70%;
+  align-self: flex-end;
+ 
+}
+
+.chatbox_receiver {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  max-width: 70%;
+  align-self: flex-start;
+ 
+}
+
+.input-container{
+  width: 300px; 
+  margin: auto; 
+}
