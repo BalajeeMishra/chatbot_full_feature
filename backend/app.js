@@ -10,7 +10,6 @@ const client = redis.createClient();
 const { v4: uuidv4 } = require("uuid");
 const sessionId = uuidv4();
 const session = require("express-session");
-const { Console } = require("console");
 const RedisStore = require("connect-redis").default;
 
 const sessionMiddleware = session({
@@ -37,16 +36,16 @@ const io = new Server(httpServer, {
 
 const userSocketMap = {};
 io.on("connection", (socket) => {
-  console.log(socket.id,"last time ")
+  console.log(socket.id, "last time ");
   // socket.join()
   const userId = socket.handshake.query.userId;
   if (userId != "undefined") userSocketMap[userId] = socket.id;
 
-  socket.on("sendMessage", ({authUser,userToChat,message}) => {
+  socket.on("sendMessage", ({ authUser, userToChat, message }) => {
     const sender = authUser;
     const receiver = userToChat;
-    if(userSocketMap[receiver]){
-    io.to(userSocketMap[receiver]).emit('receiveMessage',{sender,message});
+    if (userSocketMap[receiver]) {
+      io.to(userSocketMap[receiver]).emit("receiveMessage", { sender, message });
     }
   });
   socket.on("disconnect", () => {

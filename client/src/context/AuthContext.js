@@ -20,7 +20,7 @@ const AuthContextProvider = ({ children }) => {
         console.log(e);
       }
     };
-    checkLoginStatus();
+    // checkLoginStatus();
   }, []);
   return <AuthContext.Provider value={{ authUser, setAuthUser, setUserToChat, userToChat, setMessageTracker, messageTracker }}>{children}</AuthContext.Provider>;
 };
